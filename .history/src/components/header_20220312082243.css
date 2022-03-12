@@ -1,0 +1,10 @@
+.header{
+    display: flex;
+    padding: 15px 20px;   
+    /* 15 top and bottom  20 left right */
+}
+
+
+.header__left > img {
+    height: 40px;
+}

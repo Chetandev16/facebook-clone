@@ -1,0 +1,10 @@
+.app {
+    background: #f1f2f5;
+    height: 100vh;
+}
+
+.app__body{
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 10px;
+}

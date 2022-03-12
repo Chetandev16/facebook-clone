@@ -1,0 +1,17 @@
+import "./App.css";
+import  Header from "./components/Header";
+function App() {
+  return (
+    <div className="app">
+      {/* <h1> Facebook Clone </h1> */}
+
+      {/* Header */}
+      <Header/>
+      {/* App Body */}
+      {/* Sidebar */}
+      {/* feed */}
+    </div>
+  );
+}
+
+export default App;
