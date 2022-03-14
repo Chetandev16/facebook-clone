@@ -1,9 +1,0 @@
-.header{
-    display: flex;
-    padding: 15px 20px;
-}
-
-
-.header__left > img {
-    height: 40px;
-}
