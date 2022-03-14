@@ -8,7 +8,7 @@ import {
   AccountCircle,
   ExpandMore,
 } from "@material-ui/icons";
-
+import FlipMove from "react-flip-move";
 const Post = forwardRef(
   ({ key,profilePic, image, username, timestamp, message }, ref) => {
     // var date = new Date(timestamp);

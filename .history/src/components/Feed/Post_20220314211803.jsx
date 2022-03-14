@@ -10,7 +10,7 @@ import {
 } from "@material-ui/icons";
 
 const Post = forwardRef(
-  ({ key,profilePic, image, username, timestamp, message }, ref) => {
+  ({ profilePic, image, username, timestamp, message }, ref) => {
     // var date = new Date(timestamp);
     // date.toString();
     // {new Date(timestamp?.toDate()).toUTCString()}
