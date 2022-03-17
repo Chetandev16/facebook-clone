@@ -1,8 +1,5 @@
 import React, { forwardRef } from "react";
 import "./post.css";
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
 import { Avatar, IconButton } from "@material-ui/core";
 import {
   ThumbUp,
@@ -11,9 +8,7 @@ import {
   AccountCircle,
   ExpandMore,
 } from "@material-ui/icons";
-import { useStatevalue } from "../StateProvider";
 import { Delete } from "@material-ui/icons";
-
 import swal from "sweetalert";
 import db from "../../fire";
 const Post = forwardRef(
@@ -21,31 +16,18 @@ const Post = forwardRef(
     // var date = new Date(timestamp);
     // date.toString();
     // {new Date(timestamp?.toDate()).toUTCString()}
-    const [{ user }, dispatch] = useStatevalue();
+
     // console.log(timestamp.toDate().toDateString());
+
     const firebaseDelete = () => {
-      firebase
-        .firestore()
-        .collection("posts")
-        .where("message", "==", message)
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.docs[0].ref.delete();
-          swal("Done!", "Post Deleted Successfully!!", "success");
-        })
-        .catch((e) => {
-          swal("Failed!", "Post Deletion failed!!", "error");
-        });
+      db.collection('posts').doc(key).delete()
+      .then(swal("Done!", "Post Deleted Successfully!!", "success")).catch((e)=>{
+        console.log('====================================');
+        console.log(e.message);
+        console.log('====================================');
+      })
     };
 
-    // db.collection('posts').doc(key).delete()
-    //   .then(swal("Done!", "Post Deleted Successfully!!", "success")).catch((e)=>{
-    //     console.log('====================================');
-    //     console.log(e.message);
-    //     console.log('====================================');
-    //   })
-    // console.log(user.displayName);
-    const deleteuser = username == user.displayName;
     return (
       <div ref={ref} className="post">
         <div className="post__top">
@@ -57,11 +39,7 @@ const Post = forwardRef(
             </div>
           </div>
           <div className="post__right">
-            <IconButton
-              className={deleteuser ? "delete__show" : "delete__hide"}
-              disabled={!deleteuser}
-              onClick={firebaseDelete}
-            >
+            <IconButton onClick={firebaseDelete}>
               <Delete />
             </IconButton>
           </div>

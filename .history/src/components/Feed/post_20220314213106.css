@@ -11,7 +11,6 @@
   position: relative;
   align-items: center;
   padding: 15px;
-  justify-content: space-between;
 }
 
 .post__avatar {
@@ -62,15 +61,4 @@
 
 .post__right{
   color: gray;
-  cursor: pointer;
-}
-.post__left{
-  display: flex;
-}
-
-.delete__show{
-  display: show !important;
-}
-.delete__hide{
-  display: none !important;
 }

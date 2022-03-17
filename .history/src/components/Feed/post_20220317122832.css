@@ -69,8 +69,8 @@
 }
 
 .delete__show{
-  display: show !important;
+  display: show;
 }
 .delete__hide{
-  display: none !important;
+  display: none;
 }

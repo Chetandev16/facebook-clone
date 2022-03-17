@@ -32,7 +32,7 @@ const Feed = () => {
       <FlipMove>
         {post.map(({ id, data }) => (
           <Post
-            key={id}
+            key={10}
             profilePic={data.profilePic}
             message={data.message}
             timestamp={data.timestamp}

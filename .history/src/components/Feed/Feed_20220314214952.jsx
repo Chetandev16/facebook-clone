@@ -23,21 +23,21 @@ const Feed = () => {
       });
   }, []);
 
-  // console.log(post[0].id);
+  console.log(post);
 
   return (
     <div className="feed">
       <StoryReel />
       <AddPost />
       <FlipMove>
-        {post.map(({ id, data }) => (
+        {post.map(({id,post}) => (
           <Post
             key={id}
-            profilePic={data.profilePic}
-            message={data.message}
-            timestamp={data.timestamp}
-            username={data.username}
-            image={data.image}
+            profilePic={post.profilePic}
+            message={post.message}
+            timestamp={post.timestamp}
+            username={post.username}
+            image={post.image}
           />
         ))}
       </FlipMove>

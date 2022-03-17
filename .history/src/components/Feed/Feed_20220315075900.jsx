@@ -22,9 +22,6 @@ const Feed = () => {
         );
       });
   }, []);
-
-  // console.log(post[0].id);
-
   return (
     <div className="feed">
       <StoryReel />
@@ -33,11 +30,7 @@ const Feed = () => {
         {post.map(({ id, data }) => (
           <Post
             key={id}
-            profilePic={data.profilePic}
-            message={data.message}
-            timestamp={data.timestamp}
-            username={data.username}
-            image={data.image}
+            data={data}
           />
         ))}
       </FlipMove>

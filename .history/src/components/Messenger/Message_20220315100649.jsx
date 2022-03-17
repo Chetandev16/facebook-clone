@@ -4,9 +4,9 @@ import "./Message.css";
 
 const Message = forwardRef(({ key, username, message }, ref) => {
 
-  // console.log('====================================');
-  // console.log(key);
-  // console.log('====================================');
+  console.log('====================================');
+  console.log(key);
+  console.log('====================================');
   const display = message.username.split(" ").shift();
   const isUser = username === message.username;
   return (

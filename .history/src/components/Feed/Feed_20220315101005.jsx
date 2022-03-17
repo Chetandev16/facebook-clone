@@ -23,7 +23,7 @@ const Feed = () => {
       });
   }, []);
 
-  // console.log(post[0].id);
+  console.log(post[0].data);
 
   return (
     <div className="feed">

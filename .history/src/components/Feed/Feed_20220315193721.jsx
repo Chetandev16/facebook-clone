@@ -23,7 +23,7 @@ const Feed = () => {
       });
   }, []);
 
-  // console.log(post[0].id);
+  console.log(post[0].id);
 
   return (
     <div className="feed">
@@ -32,7 +32,7 @@ const Feed = () => {
       <FlipMove>
         {post.map(({ id, data }) => (
           <Post
-            key={id}
+            key={10}
             profilePic={data.profilePic}
             message={data.message}
             timestamp={data.timestamp}

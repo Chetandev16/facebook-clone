@@ -22,9 +22,7 @@ const Feed = () => {
         );
       });
   }, []);
-
-  // console.log(post[0].id);
-
+  console.log(id);
   return (
     <div className="feed">
       <StoryReel />

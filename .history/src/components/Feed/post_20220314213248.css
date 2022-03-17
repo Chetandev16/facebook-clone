@@ -67,10 +67,3 @@
 .post__left{
   display: flex;
 }
-
-.delete__show{
-  display: show !important;
-}
-.delete__hide{
-  display: none !important;
-}

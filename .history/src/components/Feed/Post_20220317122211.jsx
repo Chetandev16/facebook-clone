@@ -11,9 +11,7 @@ import {
   AccountCircle,
   ExpandMore,
 } from "@material-ui/icons";
-import { useStatevalue } from "../StateProvider";
 import { Delete } from "@material-ui/icons";
-
 import swal from "sweetalert";
 import db from "../../fire";
 const Post = forwardRef(
@@ -21,7 +19,7 @@ const Post = forwardRef(
     // var date = new Date(timestamp);
     // date.toString();
     // {new Date(timestamp?.toDate()).toUTCString()}
-    const [{ user }, dispatch] = useStatevalue();
+
     // console.log(timestamp.toDate().toDateString());
     const firebaseDelete = () => {
       firebase
@@ -31,10 +29,9 @@ const Post = forwardRef(
         .get()
         .then((querySnapshot) => {
           querySnapshot.docs[0].ref.delete();
-          swal("Done!", "Post Deleted Successfully!!", "success");
-        })
-        .catch((e) => {
-          swal("Failed!", "Post Deletion failed!!", "error");
+          swal("Done!", "Post Deleted Successfully!!", "success")
+        }).catch((e)=>{
+          swal("Failed!", "Post Deletion failed!!", "error")
         });
     };
 
@@ -44,8 +41,7 @@ const Post = forwardRef(
     //     console.log(e.message);
     //     console.log('====================================');
     //   })
-    // console.log(user.displayName);
-    const deleteuser = username == user.displayName;
+    const deleteuser = username == message.username; 
     return (
       <div ref={ref} className="post">
         <div className="post__top">
@@ -57,11 +53,7 @@ const Post = forwardRef(
             </div>
           </div>
           <div className="post__right">
-            <IconButton
-              className={deleteuser ? "delete__show" : "delete__hide"}
-              disabled={!deleteuser}
-              onClick={firebaseDelete}
-            >
+            <IconButton disabled={!deleteuser}  onClick={firebaseDelete}>
               <Delete />
             </IconButton>
           </div>

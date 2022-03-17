@@ -58,8 +58,8 @@ const Post = forwardRef(
           </div>
           <div className="post__right">
             <IconButton
-              className={deleteuser ? "delete__show" : "delete__hide"}
-              disabled={!deleteuser}
+              // className={deleteuser ? "delete__show" : "delete__hide"}
+              // disabled={!deleteuser}
               onClick={firebaseDelete}
             >
               <Delete />

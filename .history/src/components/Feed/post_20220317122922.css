@@ -69,7 +69,7 @@
 }
 
 .delete__show{
-  display: show !important;
+  display: non !important;
 }
 .delete__hide{
   display: none !important;

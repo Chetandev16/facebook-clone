@@ -31,10 +31,9 @@ const Post = forwardRef(
         .get()
         .then((querySnapshot) => {
           querySnapshot.docs[0].ref.delete();
-          swal("Done!", "Post Deleted Successfully!!", "success");
-        })
-        .catch((e) => {
-          swal("Failed!", "Post Deletion failed!!", "error");
+          swal("Done!", "Post Deleted Successfully!!", "success")
+        }).catch((e)=>{
+          swal("Failed!", "Post Deletion failed!!", "error")
         });
     };
 
@@ -45,7 +44,7 @@ const Post = forwardRef(
     //     console.log('====================================');
     //   })
     // console.log(user.displayName);
-    const deleteuser = username == user.displayName;
+    const deleteuser = username == user.displayName; 
     return (
       <div ref={ref} className="post">
         <div className="post__top">
@@ -57,11 +56,7 @@ const Post = forwardRef(
             </div>
           </div>
           <div className="post__right">
-            <IconButton
-              className={deleteuser ? "delete__show" : "delete__hide"}
-              disabled={!deleteuser}
-              onClick={firebaseDelete}
-            >
+            <IconButton disabled={!deleteuser}  onClick={firebaseDelete}>
               <Delete />
             </IconButton>
           </div>
