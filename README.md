@@ -1,7 +1,7 @@
 # Facebook Clone:-
 This is facebook clone build by using react,firebase and react-context-api
 # Link :
-https://facebook-clone-bychetan.netlify.app/
+https://chetanclone.netlify.app/
 
 
 # ScreenShot
